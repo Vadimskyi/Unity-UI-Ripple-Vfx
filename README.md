@@ -6,5 +6,6 @@ Simple optimized UI effect. Inspired by Marerial Design
 #### To update to the newes version:
 - remove old asset store package
 - open package manager and choose "add package from git url"
-
-#### Enjoy.
+- add "https://github.com/Vadimskyi/UnityLightningFastUITweener.git" dependency package first
+- add "https://github.com/Vadimskyi/Unity-UI-Ripple-Vfx.git"
+- enjoy
