@@ -1,0 +1,24 @@
+{
+  "name": "com.vadimskyi.uiripplevfx",
+  "version": "1.0.0",
+  "displayName": "Unity UI Ripple Vfx",
+  "description": "Simple optimized UI effect. Inspired by Marerial Design",
+  "unity": "2018.3",
+  "documentationUrl": "https://example.com/",
+  "changelogUrl": "https://example.com/changelog.html",
+  "licensesUrl": "https://example.com/licensing.html",
+  "dependencies": {
+ },
+ "keywords": [
+    "ui",
+    "tween",
+    "ripple",
+	"marerialdesign",
+	"lightweight"
+  ],
+  "author": {
+    "name": "Vadimskyi",
+    "email": "gdvadimskyi@gmail.com",
+    "url": "https://www.vadimskyi.com/"
+  }
+}

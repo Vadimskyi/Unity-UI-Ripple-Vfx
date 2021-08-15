@@ -1,0 +1,15 @@
+{
+    "name": "Ripple",
+    "references": [
+        "GUID:2754c0d576d0c6a42b86ec3b6357e89c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

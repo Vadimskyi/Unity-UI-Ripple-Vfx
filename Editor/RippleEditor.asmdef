@@ -1,0 +1,17 @@
+{
+    "name": "RippleEditor",
+    "references": [
+        "GUID:dcabda302f30a9048981dc95b380146e"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
