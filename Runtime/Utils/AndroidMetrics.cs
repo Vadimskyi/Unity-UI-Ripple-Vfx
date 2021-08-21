@@ -4,6 +4,8 @@
  * You may use, distribute and modify this code under the
  * terms of the GPL-3.0 License.
  */
+
+using System;
 using UnityEngine;
 
 namespace VadimskyiLab.Android
@@ -135,6 +137,23 @@ namespace VadimskyiLab.Android
                 }
             }
 #endif
+        }
+
+        public static float GetDeviceTextScale()
+        {
+            try
+            {
+                AndroidJavaClass unityPlayerClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+                var activityInstance = unityPlayerClass.GetStatic<AndroidJavaObject>("currentActivity");
+                var res = activityInstance.Call<AndroidJavaObject>("getResources");
+                var conf = res.Call<AndroidJavaObject>("getConfiguration");
+                float scale = conf.Get<float>("fontScale");
+                return scale;
+            }
+            catch
+            {
+                return 1;
+            }
         }
     }
 }
