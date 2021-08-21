@@ -7,7 +7,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using VadimskyiLab.Android;
 using VadimskyiLab.Utils;
 
 namespace VadimskyiLab.UiExtension
@@ -19,6 +18,9 @@ namespace VadimskyiLab.UiExtension
         [SerializeField] private float _effectDuration = 0.3f;
         [SerializeField] private float _scaleFactor = 2;
         [SerializeField] private bool _applyMask = true;
+        [SerializeField] private bool _holdOnPress = true;
+        [SerializeField] private bool _customRipplePosition = false;
+        [SerializeField] private Vector2 _ripplePosition;
 
         private Mask _mask;
         private Image _rippleSprite;
@@ -43,19 +45,19 @@ namespace VadimskyiLab.UiExtension
         {
             if (!enabled)
                 return;
-            OnClick(eventData);
+            OnClick();
         }
 
         public void OnPointerUp(PointerEventData eventData)
         {
-            if (!enabled)
+            if (!enabled || !_holdOnPress)
                 return;
             _fadeTweener?.Kill();
             _fadeTweener = _rippleSprite.TweenAlpha(_alphaFactorMin, _effectDuration, TweenerPlayStyle.Once);
             _fadeTweener.OnComplete(ClearCache);
         }
 
-        private void OnClick(BaseEventData pData)
+        private void OnClick()
         {
             if (!enabled)
                 return;
@@ -64,14 +66,21 @@ namespace VadimskyiLab.UiExtension
             GenerateRippleTexture();
             CreateMask();
 
-            _rippleSprite.rectTransform.anchoredPosition = UiCanvasHelper.Instance.ScreenPosToGui(InputUtils.GetInputPosition());
+            if(_customRipplePosition)
+                _rippleSprite.rectTransform.anchoredPosition = _ripplePosition;
+            else
+                _rippleSprite.rectTransform.anchoredPosition = UiCanvasHelper.Instance.ScreenPosToGui(InputUtils.GetInputPosition());
+
             _rippleSprite.rectTransform.localScale = Vector3.one;
             GraphicExtend.SetAlpha(_rippleSprite, _alphaFactorMin);
 
             _fadeTweener?.Kill();
-            _fadeTweener = _rippleSprite.TweenAlpha(_alphaFactorMax, _effectDuration, TweenerPlayStyle.Once);
+            _fadeTweener = _rippleSprite.TweenAlpha(_alphaFactorMax, _effectDuration, _holdOnPress ? TweenerPlayStyle.Once : TweenerPlayStyle.PingPong);
             _scaleTweener?.Kill();
             _scaleTweener = _rippleSprite.rectTransform.TweenScale2D(new Vector2(GetScaleFactor(), GetScaleFactor()), _effectDuration, TweenerPlayStyle.Once);
+
+            if(!_holdOnPress)
+                _fadeTweener.OnComplete(ClearCache);
         }
 
         private void CreateRippleSprite()

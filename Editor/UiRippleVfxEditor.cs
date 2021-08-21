@@ -17,6 +17,9 @@ namespace VadimskyiLab.UiExtension
         SerializedProperty EffectDuration;
         SerializedProperty ScaleFactor;
         SerializedProperty ApplyMask;
+        SerializedProperty HoldOnPress;
+        SerializedProperty CustomRipplePosition;
+        SerializedProperty RipplePosition;
 
         protected void OnEnable()
         {
@@ -25,6 +28,9 @@ namespace VadimskyiLab.UiExtension
             EffectDuration = serializedObject.FindProperty("_effectDuration");
             ScaleFactor = serializedObject.FindProperty("_scaleFactor");
             ApplyMask = serializedObject.FindProperty("_applyMask");
+            HoldOnPress = serializedObject.FindProperty("_holdOnPress");
+            CustomRipplePosition = serializedObject.FindProperty("_customRipplePosition");
+            RipplePosition = serializedObject.FindProperty("_ripplePosition");
         }
 
         public override void OnInspectorGUI()
@@ -38,6 +44,13 @@ namespace VadimskyiLab.UiExtension
             EditorGUILayout.PropertyField(EffectDuration);
             EditorGUILayout.PropertyField(ScaleFactor);
             EditorGUILayout.PropertyField(ApplyMask);
+            EditorGUILayout.PropertyField(HoldOnPress);
+            EditorGUILayout.PropertyField(CustomRipplePosition);
+
+            if (CustomRipplePosition.boolValue)
+            {
+                EditorGUILayout.PropertyField(RipplePosition);
+            }
 
             serializedObject.ApplyModifiedProperties();
         }
