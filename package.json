@@ -1,6 +1,6 @@
 {
   "name": "com.vadimskyi.uiripplevfx",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "displayName": "Unity UI Ripple Vfx",
   "description": "Simple optimized UI effect. Inspired by Marerial Design",
   "unity": "2018.3",
@@ -20,5 +20,12 @@
     "name": "Vadimskyi",
     "email": "gdvadimskyi@gmail.com",
     "url": "https://www.vadimskyi.com/"
-  }
+  },
+  "samples": [
+    {
+      "displayName": "Sample Scene",
+      "description": "Simple button with ripple script attached",
+      "path": "Samples~/Sample Folder 1"
+    }
+  ]
 }
