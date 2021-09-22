@@ -72,7 +72,7 @@ namespace VadimskyiLab.UiExtension
                 _rippleSprite.rectTransform.anchoredPosition = UiCanvasHelper.Instance.ScreenPosToGui(InputUtils.GetInputPosition());
 
             _rippleSprite.rectTransform.localScale = Vector3.one;
-            GraphicExtend.SetAlpha(_rippleSprite, _alphaFactorMin);
+            //GraphicExtend.SetAlpha(_rippleSprite, _alphaFactorMin);
 
             _fadeTweener?.Kill();
             _fadeTweener = _rippleSprite.TweenAlpha(_alphaFactorMax, _effectDuration, _holdOnPress ? TweenerPlayStyle.Once : TweenerPlayStyle.PingPong);
