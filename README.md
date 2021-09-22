@@ -27,7 +27,7 @@ This library is distributed via Unity's built-in package manager. Required Unity
 $ cd ~/Document/projects/hello-openupm
 
 # add package
-$ openupm add com.vadimskyi.lightningfasttweeners
+$ openupm add com.vadimskyi.uiripplevfx
 ```
 - Open Unity for package to be installed
 
