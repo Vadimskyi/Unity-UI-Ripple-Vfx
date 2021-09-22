@@ -2,7 +2,7 @@
 Simple optimized UI effect. Inspired by Marerial Design
 
 #### This project will move from Asset Store to Unity Package from now on.
-#### I also updatad code, fixed some bugs and added functionality
+#### I also updated code, fixed some bugs and added functionality
 ## Table of Contents
 
 - [Installation](#installation)
