@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/Vadimskyi/Unity-UI-Ripple-Vfx/compare/v1.0.1...v1.0.2) (2021-09-22)
+
+
+### Bug Fixes
+
+* Samples => Samples~ ([78cf6e3](https://github.com/Vadimskyi/Unity-UI-Ripple-Vfx/commit/78cf6e33d97253a1006315ae81d6496f256e18d1))
+
 ## [1.0.1](https://github.com/Vadimskyi/Unity-UI-Ripple-Vfx/compare/v1.0.0...v1.0.1) (2021-09-22)
 
 
