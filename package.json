@@ -7,7 +7,9 @@
   "documentationUrl": "https://example.com/",
   "changelogUrl": "https://example.com/changelog.html",
   "licensesUrl": "https://example.com/licensing.html",
-  "dependencies": {},
+  "dependencies": {
+	"com.vadimskyi.lightningfasttweeners" : "1.1.1"
+  },
   "keywords": [
     "ui",
     "tween",
@@ -24,7 +26,7 @@
     {
       "displayName": "Sample Scene",
       "description": "Simple button with ripple script attached",
-      "path": "Samples~/Sample Folder 1"
+      "path": "Samples/Sample Folder 1"
     }
   ]
 }
