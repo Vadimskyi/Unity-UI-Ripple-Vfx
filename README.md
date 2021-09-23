@@ -6,7 +6,6 @@ Simple optimized UI effect. Inspired by Marerial Design
 ## Table of Contents
 
 - [Installation](#installation)
-    - [Unity Package](#unity-package)
     - [UPM CLI](#upm-cli)
 - [Quick Start](#quick-start)
 - [Author Info](#author-info)
@@ -14,10 +13,6 @@ Simple optimized UI effect. Inspired by Marerial Design
 ## Installation
 
 This library is distributed via Unity's built-in package manager. Required Unity 2018.3 or later.
-
-### Unity Package
-- Open Unity project
-- Download and run .unitypackage file from the latest release
 
 ### UPM CLI
 - You need to have upm-cli installed: https://github.com/openupm/openupm-cli#openupm-cli
