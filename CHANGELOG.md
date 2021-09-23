@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/Vadimskyi/Unity-UI-Ripple-Vfx/compare/v1.0.2...v1.0.3) (2021-09-23)
+
+
+### Bug Fixes
+
+* add upm-package dependency in package.json config file ([100ccb2](https://github.com/Vadimskyi/Unity-UI-Ripple-Vfx/commit/100ccb2623ef47953cc453e8a18ee0010703e0d9))
+
 ## [1.0.2](https://github.com/Vadimskyi/Unity-UI-Ripple-Vfx/compare/v1.0.1...v1.0.2) (2021-09-22)
 
 
