@@ -25,6 +25,7 @@ namespace VadimskyiLab.UiExtension
         private Mask _mask;
         private Image _rippleSprite;
         private Texture2D _generatedTexture;
+        private RectTransform _rectTransform;
         private ITweenRemoteControl _fadeTweener;
         private ITweenRemoteControl _scaleTweener;
 
@@ -34,6 +35,7 @@ namespace VadimskyiLab.UiExtension
         protected override void Awake()
         {
             base.Awake();
+            _rectTransform = GetComponent<RectTransform>();
         }
 
         public void Enable(bool b)
@@ -69,7 +71,7 @@ namespace VadimskyiLab.UiExtension
             if(_customRipplePosition)
                 _rippleSprite.rectTransform.anchoredPosition = _ripplePosition;
             else
-                _rippleSprite.rectTransform.anchoredPosition = UiCanvasHelper.Instance.ScreenPosToGui(InputUtils.GetInputPosition());
+                _rippleSprite.rectTransform.anchoredPosition = UiCanvasHelper.Instance.ScreenPosToGui(_rectTransform, InputUtils.GetInputPosition());
 
             _rippleSprite.rectTransform.localScale = Vector3.one;
             //GraphicExtend.SetAlpha(_rippleSprite, _alphaFactorMin);

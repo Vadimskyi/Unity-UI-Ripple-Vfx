@@ -84,18 +84,15 @@ namespace VadimskyiLab.UiExtension
             _guiOffset = new Vector2( _screenRect.sizeDelta.x / 2f,  _screenRect.sizeDelta.y / 2f);
         }
 
-        public Vector2 ScreenPosToGui(Vector2 screenPos)
+        public Vector2 ScreenPosToGui(RectTransform rect, Vector2 screenPos)
         {
-            var viewPort = Camera.main.ScreenToViewportPoint(screenPos);
-            return (new Vector2(
-                        viewPort.x * ScreenRect.sizeDelta.x,
-                        viewPort.y * ScreenRect.sizeDelta.y
-                    ) - _guiOffset);
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(rect, screenPos, Camera.main, out var localPoint);
+            return localPoint;
         }
 
         public Vector2 ScreenPosToGui()
         {
-            return ScreenPosToGui(InputUtils.GetInputPosition());
+            return ScreenPosToGui(ScreenRect, InputUtils.GetInputPosition());
         }
 
         public Vector2 ScreenPosToWorld(Vector2 screenPos)
@@ -123,7 +120,7 @@ namespace VadimskyiLab.UiExtension
 
         public bool IsInputInRect(Vector2 screenPos, RectTransform rect)
         {
-            var guiPos = ScreenPosToGui(screenPos);
+            var guiPos = ScreenPosToGui(ScreenRect, screenPos);
             var size = GetRectSize(rect);
             var bound = new Bounds(GetRectCenter(rect), size);
             return bound.Contains(guiPos);
@@ -196,11 +193,11 @@ namespace VadimskyiLab.UiExtension
 
         public Vector2 GetPointBetweenFingers_Gui()
         {
-            if(Input.touches == null || Input.touches.Length == 0) return ScreenPosToGui(InputUtils.GetInputPosition());
-            if (Input.touches.Length < 2) return ScreenPosToGui(Input.GetTouch(0).position);
+            if(Input.touches == null || Input.touches.Length == 0) return ScreenPosToGui(ScreenRect, InputUtils.GetInputPosition());
+            if (Input.touches.Length < 2) return ScreenPosToGui(ScreenRect, Input.GetTouch(0).position);
             var poin1 = Input.GetTouch(0).position;
             var poin2 = Input.GetTouch(1).position;
-            return ScreenPosToGui((poin1 + poin2) / 2);
+            return ScreenPosToGui(ScreenRect, (poin1 + poin2) / 2);
         }
 
         public float PhysicalSizeInInches_ToPixels(float inches)
